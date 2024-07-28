@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang = en>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Guessing Game</title>
+  <meta name="author" content="Ethan Gray">
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <script>
+    randomNumber = Math.floor(Math.random() * 10) + 1;
+    document.innerHTML = randomNumber;
+
+    let guess = prompt("Guess a number between 1 and 10.");
+
+    var i = 1;
+
+    while (guess != randomNumber) {
+      if (guess > randomNumber) {
+        guess = prompt("Too high. Guess again.");
+        i++;
+      }
+      else if (guess < randomNumber) {
+        guess = prompt("Too low. Guess again.");
+        i++;
+      }
+      else {
+        break;
+      }
+    }
+    prompt("You got it in " + i + " tries!");
+    console.log(randomNumber);
+  </script>
+</body>
+
+</html>
